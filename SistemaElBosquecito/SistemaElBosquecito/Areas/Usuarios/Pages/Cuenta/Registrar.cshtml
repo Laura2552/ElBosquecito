@@ -1,0 +1,26 @@
+﻿@page "/Usuario/Registrar"
+@model RegistrarModel
+@{
+    var image = "/imagenes/imagen/avatar-emape.jpg";
+}
+<div class="container p-4">
+    <form method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="card text-center">
+                    <div class="card-header ">
+                        <output id="ImageUser">
+                            <img scr=@image class="imageUser" />
+                        </output>
+                    </div>
+                    <div class="card-body">
+                        <div class="figure-caption text-center">
+                            <label class="btn btn-primary" for="files">Cargar Fotos</label>
+                            <input asp-for="Input.AvatarImagen" accept="imagen/*" type="file" id="files" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

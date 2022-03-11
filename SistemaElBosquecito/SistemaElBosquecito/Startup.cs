@@ -64,6 +64,9 @@ namespace SistemaElBosquecito
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                //RUTA O TUVERIA PARA CONTROLADORES DEL AREA CREADA LLAMADA USUARIOS
+                endpoints.MapAreaControllerRoute("Usuarios", "Usuarios", "{controller=Usuarios}/{action=Usuarios}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

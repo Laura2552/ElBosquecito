@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ElBosquecito.Data
+namespace SistemaElBosquecito.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

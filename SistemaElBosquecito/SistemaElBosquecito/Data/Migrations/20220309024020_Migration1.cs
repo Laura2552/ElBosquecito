@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ElBosquecito.Data.Migrations
+namespace SistemaElBosquecito.Data.Migrations
 {
-    public partial class ConexionBD : Migration
+    public partial class Migration1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

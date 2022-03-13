@@ -1,6 +1,6 @@
 using System;
 
-namespace ElBosquecito.Models
+namespace SistemaElBosquecito.Models
 {
     public class ErrorViewModel
     {

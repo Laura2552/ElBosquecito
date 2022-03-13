@@ -20,7 +20,7 @@ namespace SistemaElBosquecito.Areas.Usuarios.Models
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^\(?([0-9]{2})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{5})$", ErrorMessage = "El formato del telefono ingresado no es valido.")]
-        public string Telefono { get; set; }
+        public string PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [EmailAddress(ErrorMessage = "La direccion de correo electronico Ingresada no es valida.")]
@@ -29,6 +29,6 @@ namespace SistemaElBosquecito.Areas.Usuarios.Models
         [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [StringLength(100, ErrorMessage = "El numero de caracteres de {0} debe ser de al menos {2} caracteres.", MinimumLength = 8)]
-        public string Contrasena { get; set; }
+        public string Password { get; set; }
     }
 }

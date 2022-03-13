@@ -20,6 +20,8 @@ namespace SistemaElBosquecito.Areas.Usuarios.Pages.Cuenta
         public class InputModel : InputModelRegistrar
         {
             public IFormFile AvatarImagen { get; set; }
+            [TempData]
+            public string ErrorMessage { get; set; }
         }
     }
 }

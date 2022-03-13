@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SistemaElBosquecito.Models;
 using System;
@@ -11,15 +13,22 @@ namespace SistemaElBosquecito.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        // Registrar roles
 
-        public HomeController(ILogger<HomeController> logger)
+        //IServiceProvider _serviceProvider;
+
+        public HomeController(IServiceProvider serviceProvider)
         {
-            _logger = logger;
+            //Registrar roles
+
+           // _serviceProvider = serviceProvider;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            //Registrar roles
+
+          //  await CreateRolesAsync(_serviceProvider);
             return View();
         }
 
@@ -33,5 +42,25 @@ namespace SistemaElBosquecito.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public async Task CreateRolesAsync(IServiceProvider serviceProvider)
+        {
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+           
+            //Verificar los roles registrados y registrar los nuevos
+            String[] rolesName = { "Admin", "User" };
+            foreach (var item in rolesName)
+            {
+                var roleExist = await roleManager.RoleExistsAsync(item);
+                if (!roleExist)
+                {
+                    await roleManager.CreateAsync(new IdentityRole(item));
+                }
+
+            }
+            
+
+        }
+
     }
 }

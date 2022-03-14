@@ -33,6 +33,7 @@ namespace SistemaElBosquecito.Areas.Usuarios.Pages.Cuenta
         {
             Input = new InputModel
             {
+
                 rolesLista = _usersRole.getRoles(_roleManager)
             };
 

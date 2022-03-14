@@ -30,5 +30,8 @@ namespace SistemaElBosquecito.Areas.Usuarios.Models
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [StringLength(100, ErrorMessage = "El numero de caracteres de {0} debe ser de al menos {2} caracteres.", MinimumLength = 8)]
         public string Password { get; set; }
+
+        [Required]
+        public string Role { get; set; }
     }
 }

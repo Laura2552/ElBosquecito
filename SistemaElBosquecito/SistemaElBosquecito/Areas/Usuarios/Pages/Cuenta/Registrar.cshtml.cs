@@ -48,5 +48,23 @@ namespace SistemaElBosquecito.Areas.Usuarios.Pages.Cuenta
             public string ErrorMessage { get; set; }
             public List<SelectListItem> rolesLista { get; set; }
         }
+        
+        public async Task<IActionResult> OnPost()
+        {
+            if (await SaveAsync())
+            {
+                return Redirect("/Usuarios/Usuarios?area=Users");
+            }
+            else
+            {
+                return Redirect("/Usuarios/Registrar");
+
+            }
+        }
+        private async Task<bool> SaveAsync()
+        {
+            DataInput = Input;
+            var valor = false;
+        }
     }
 }

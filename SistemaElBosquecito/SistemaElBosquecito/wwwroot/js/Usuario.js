@@ -1,5 +1,5 @@
 ﻿
 
-class Usuario extends Cargarfoto {
+class Usuario extends Cargarfoto{
 
 }
